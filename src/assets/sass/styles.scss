@@ -1,0 +1,62 @@
+@import '../variables/main';
+@include resetStyles;
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 3rem;
+
+    .logo {
+       @include imageSize(10rem, auto);
+    }
+
+    nav {
+        width: 40%;
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        li {
+            text-transform: uppercase;
+
+            a {
+                color: $main-blue;
+            }
+
+            &:nth-of-type(4){
+                div {
+                    width: 2rem;
+                }
+            }
+        }
+    }
+}
+
+.about {
+    height: 400px;
+}
+
+.description {
+    display: flex;
+    height: 400px;
+    background: $main-blue;
+}
+
+.listProducts {
+    background: $main-white;
+    height: 800px;
+}
+
+.cartList {
+    background: $main-gray;
+    height: 600px;
+}
+
+footer {
+    background: $main-blue;
+    height: 200px;
+}
