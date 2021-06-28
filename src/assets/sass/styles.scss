@@ -1,23 +1,35 @@
 @import '../variables/main';
 @include resetStyles;
 
+.principalWrapper {
+    @media (min-width: 200px){
+        width: 100%;
+    }
+
+    @media (min-width: 1200px){
+        width: 1200px;
+    }
+}
+
 header {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 3rem;
+    justify-content: center;
+    padding: 3rem 0 8rem 0;
+    background: $main-yellow;
+
+    .principalWrapper {
+        @include orderFlex(row, space-between, center);
+    }
 
     .logo {
-       @include imageSize(10rem, auto);
+       @include imageSize(15rem, auto);
     }
 
     nav {
-        width: 40%;
+        width: 50%;
 
         ul {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            @include orderFlex(row, space-between, center);
         }
 
         li {
@@ -25,6 +37,13 @@ header {
 
             a {
                 color: $main-blue;
+                font-weight: 700;
+
+                &:hover{
+                    text-decoration: underline;
+                    text-underline-position: under;
+                    transition: .1s all;
+                }
             }
 
             &:nth-of-type(4){
@@ -37,13 +56,102 @@ header {
 }
 
 .about {
-    height: 400px;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 8rem 0;
+    background: $main-yellow;
+
+    .principalWrapper {
+        @media(min-width: 200px){
+            @include orderFlex(column, center, center);
+        }
+
+        @media(min-width: 1200px) {
+            @include orderFlex(row, space-between, center);
+        }
+    }
+
+    .aboutContent {
+        width: 50%;
+
+        div {
+            width: 100%;
+        }
+
+        &:nth-of-type(1){
+             margin-right: 5rem;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 2.2rem;
+            margin: 1rem 0 5.5rem 0;
+        }
+
+        a {
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            background: $main-blue;
+            color: $main-white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            &:hover {
+                padding: 1.1rem 1.6rem;
+                transition: .1s all;
+            }
+        }
+    }
 }
 
 .description {
-    display: flex;
-    height: 400px;
+    @include orderFlex(column, center, center);
     background: $main-blue;
+    padding: 8rem 0;
+
+    .principalWrapper {
+        @include orderFlex(column, center, center);
+    }
+
+    div {
+        @include orderFlex(column, center, center);
+        text-align: center;
+
+        h2 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            color:$main-yellow;
+        }
+
+        span {
+            color: $main-white;
+            font-size: 1.5rem;
+        }
+    }
+
+    ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 6rem;
+
+        li {
+            @include orderFlex(column, center, center);
+            text-align: center;
+
+            div {
+                width: 6rem;
+            }
+
+            p {
+                color: $main-white;
+                margin-top: 2rem;
+                font-size: 1.5rem;
+            }
+
+        }
+    }
 }
 
 .listProducts {
