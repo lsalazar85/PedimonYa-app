@@ -155,16 +155,208 @@ header {
 }
 
 .listProducts {
+    @include orderFlex(column, center, center);
     background: $main-white;
-    height: 800px;
+    padding: 8rem 0;
+    text-align: center;
+
+    .principalWrapper {
+        @include orderFlex(column, center, center);
+    }
+
+    h2 {
+        font-size: 3.5rem;
+        color: $main-blue;
+    }
+
+    ul {
+        width: 100%;
+        margin-top: 7rem;
+        @include orderFlex(row, space-between, center);
+        flex-wrap: wrap;
+
+        li {
+            flex:  0 0 270px;
+            @include orderFlex(column, center, center);
+            background: $main-white;
+            border-radius: 3rem;
+            padding: 2.5rem;
+            margin-bottom: 5rem;
+            box-shadow: 2px 0px 17px 2px rgba($main-black,0.30);
+            position: relative;
+
+            div {
+                @include imageSize(14rem, auto);
+            }
+
+            span {
+                &:first-of-type {
+                    color: $main-blue;
+                    text-transform: uppercase;
+                    font-size: 1.4rem;
+                    margin-top: 1.9rem;
+                }
+
+                &:last-of-type {
+                    color: $main-blue;
+                    text-transform: uppercase;
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    margin: 2rem 0;
+                }
+            }
+
+            button {
+                background: $main-yellow;
+                color: $main-black;
+                text-transform: uppercase;
+                padding: 0.8rem 4rem;
+                font-size: 1.1rem;
+                font-weight: 700;
+                font-family: 'Lato', sans-serif;
+                border: none;
+                border-radius: 1rem;
+                cursor: pointer;
+
+                &.disabled {
+                    background: $main-gray;
+                    color: $main-white;
+                    cursor: no-drop;
+                }
+            }
+
+            .outStock {
+                background: $main-error-color;
+                color: $main-white;
+                position: absolute;
+                top: 1rem;
+                z-index: 0;
+                text-transform: uppercase;
+                font-size: 1.5rem;
+                padding: 0.8rem 0;
+            }
+        }
+    }
 }
 
 .cartList {
+    @include orderFlex(column, center, center);
+    padding: 8rem 0;
+    text-align: center;
     background: $main-gray;
-    height: 600px;
+
+    .principalWrapper {
+        @include orderFlex(column, center, center);
+    }
+
+    h2 {
+        font-size: 3.5rem;
+        color: $main-blue;
+    }
+
+    p {
+        font-size: 1.5rem;
+        color: $main-blue;
+        margin: 1.5rem 0 2rem 0;
+    }
+
+    .cart-wrapper {
+        width: 70%;
+        background: $main-white;
+        padding: 2rem;
+        border-radius: 1rem;
+        color: $main-blue;
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+
+            span {
+                font-size: 1.6rem;
+                font-weight: 700;
+            }
+        }
+
+        .cart-item-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: $main-blue;
+
+            span {
+                font-size: 1.6rem;
+                font-weight: 500;
+                margin-left: 1rem;
+            }
+        }
+
+        .item-img{
+            width: 50px;
+        }
+
+        .total-items {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 1.6rem;
+            border-top: 1px solid $main-blue;
+            margin-top: 2rem;
+            padding-top: 1rem;
+        }
+
+        .total-items {
+            @include orderFlex(row, flex-end, flex-end);
+        }
+
+        button {
+            background: $main-yellow;
+            font-weight: 700;
+            font-size: 2rem;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 1rem;
+            padding: 1rem 2rem;
+            margin-top: 2.5rem;
+        }
+
+    }
 }
 
 footer {
+    @include orderFlex(column, center, center);
+    padding: 8rem 0 4rem 0;
     background: $main-blue;
-    height: 200px;
+    color: $main-white;
+    text-transform: uppercase;
+
+    .principalWrapper {
+        @include orderFlex(column, center, center);
+    }
+
+    .title {
+        @include imageSize(30rem, auto);
+        margin-bottom: 4rem;
+    }
+
+    section {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4rem;
+
+        div {
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+                font-size: 2.2rem;
+                margin-bottom: 1.8rem;
+            }
+
+            span {
+                font-size: 1.5rem;
+            }
+        }
+    }
 }
