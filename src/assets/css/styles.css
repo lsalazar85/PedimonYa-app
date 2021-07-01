@@ -8,6 +8,7 @@
   height: auto; }
 
 body {
+  width: 100vw;
   max-width: 100%;
   max-height: 100%;
   font-family: 'Lato', sans-serif; }
@@ -45,6 +46,9 @@ header {
   justify-content: center;
   padding: 3rem 0 8rem 0;
   background: #f7de82; }
+  @media (max-width: 1200px) {
+    header {
+      padding: 3rem 1.5rem 0 1.5rem; } }
   header .principalWrapper {
     display: flex;
     flex-direction: row;
@@ -53,8 +57,18 @@ header {
   header .logo {
     width: 15rem;
     height: auto; }
+    @media (max-width: 475px) {
+      header .logo {
+        width: 9rem;
+        height: auto; } }
   header nav {
     width: 50%; }
+    @media (min-width: 200px) {
+      header nav {
+        display: none; } }
+    @media (min-width: 1200px) {
+      header nav {
+        display: block; } }
     header nav ul {
       display: flex;
       flex-direction: row;
@@ -71,6 +85,31 @@ header {
           transition: .1s all; }
       header nav li:nth-of-type(4) div {
         width: 2rem; }
+  header .menu-mobile {
+    width: 6rem; }
+    @media (min-width: 200px) {
+      header .menu-mobile {
+        display: block;
+        width: 4rem; } }
+    @media (min-width: 1200px) {
+      header .menu-mobile {
+        display: none; } }
+    header .menu-mobile div {
+      width: 100%;
+      height: auto; }
+    header .menu-mobile button {
+      background: transparent;
+      border: none;
+      outline: 0;
+      box-shadow: none !important; }
+      header .menu-mobile button:hover, header .menu-mobile button:focus, header .menu-mobile button:active {
+        background: transparent;
+        border: none;
+        outline: 0;
+        box-shadow: none !important; }
+  header .dropdown-menu {
+    background: #f7de82;
+    border: 1px solid #0c4ea2; }
 
 .about {
   display: flex;
@@ -91,10 +130,24 @@ header {
       align-items: center; } }
   .about .aboutContent {
     width: 50%; }
+    @media (max-width: 1200px) {
+      .about .aboutContent {
+        width: 100%;
+        padding: 0 1.5rem;
+        padding-top: 4rem;
+        text-align: center; } }
     .about .aboutContent div {
       width: 100%; }
+      @media (max-width: 1200px) {
+        .about .aboutContent div {
+          width: 70vw;
+          margin: 0 auto; } }
     .about .aboutContent:nth-of-type(1) {
       margin-right: 5rem; }
+      @media (max-width: 1200px) {
+        .about .aboutContent:nth-of-type(1) {
+          margin-right: 0;
+          margin-bottom: 2rem; } }
     .about .aboutContent p {
       font-weight: 400;
       font-size: 2.2rem;
@@ -133,26 +186,43 @@ header {
       font-size: 3.5rem;
       text-transform: uppercase;
       color: #f7de82; }
+      @media (max-width: 1200px) {
+        .description div h2 {
+          font-size: 10vw; } }
     .description div span {
       color: #ffffff;
       font-size: 1.5rem; }
+      @media (max-width: 1200px) {
+        .description div span {
+          font-size: 2rem;
+          margin-top: 4rem;
+          padding: 0 2rem; } }
   .description ul {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-top: 6rem; }
+    @media (max-width: 1200px) {
+      .description ul {
+        flex-direction: column; } }
     .description ul li {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center; }
+      @media (max-width: 1200px) {
+        .description ul li {
+          margin-bottom: 4rem; } }
       .description ul li div {
         width: 6rem; }
       .description ul li p {
         color: #ffffff;
         margin-top: 2rem;
         font-size: 1.5rem; }
+        @media (max-width: 1200px) {
+          .description ul li p {
+            font-size: 2rem; } }
 
 .listProducts {
   display: flex;
@@ -178,6 +248,12 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap; }
+    @media (max-width: 1200px) {
+      .listProducts ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center; } }
     .listProducts ul li {
       flex: 0 0 270px;
       display: flex;
@@ -190,6 +266,12 @@ header {
       margin-bottom: 5rem;
       box-shadow: 2px 0px 17px 2px rgba(0, 0, 0, 0.3);
       position: relative; }
+      @media (max-width: 1200px) {
+        .listProducts ul li {
+          width: 400px; } }
+      @media (max-width: 575px) {
+        .listProducts ul li {
+          width: 300px; } }
       .listProducts ul li div {
         width: 14rem;
         height: auto; }
@@ -198,6 +280,9 @@ header {
         text-transform: uppercase;
         font-size: 1.4rem;
         margin-top: 1.9rem; }
+        @media (max-width: 1200px) {
+          .listProducts ul li span:first-of-type {
+            font-size: 7vw; } }
       .listProducts ul li span:last-of-type {
         color: #0c4ea2;
         text-transform: uppercase;
@@ -245,16 +330,25 @@ header {
   .cartList h2 {
     font-size: 3.5rem;
     color: #0c4ea2; }
+    @media (max-width: 1200px) {
+      .cartList h2 {
+        font-size: 10vw; } }
   .cartList p {
     font-size: 1.5rem;
     color: #0c4ea2;
     margin: 1.5rem 0 2rem 0; }
+    @media (max-width: 1200px) {
+      .cartList p {
+        font-size: 7vw; } }
   .cartList .cart-wrapper {
     width: 70%;
     background: #ffffff;
     padding: 2rem;
     border-radius: 1rem;
     color: #0c4ea2; }
+    @media (max-width: 1200px) {
+      .cartList .cart-wrapper {
+        width: 90%; } }
     .cartList .cart-wrapper .cart-item {
       display: flex;
       justify-content: space-between;
@@ -263,6 +357,9 @@ header {
       .cartList .cart-wrapper .cart-item span {
         font-size: 1.6rem;
         font-weight: 700; }
+        @media (max-width: 1200px) {
+          .cartList .cart-wrapper .cart-item span {
+            font-size: 0.8rem; } }
     .cartList .cart-wrapper .cart-item-content {
       display: flex;
       justify-content: space-between;
@@ -295,6 +392,9 @@ header {
       border-radius: 1rem;
       padding: 1rem 2rem;
       margin-top: 2.5rem; }
+      @media (max-width: 1200px) {
+        .cartList .cart-wrapper button {
+          font-size: 5vw; } }
 
 footer {
   display: flex;
@@ -314,14 +414,25 @@ footer {
     width: 30rem;
     height: auto;
     margin-bottom: 4rem; }
+    @media (max-width: 1200px) {
+      footer .title {
+        width: 70vw;
+        height: auto; } }
   footer section {
     width: 80%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 4rem; }
+    @media (max-width: 1200px) {
+      footer section {
+        flex-direction: column;
+        text-align: center; } }
     footer section div {
       display: flex;
       flex-direction: column; }
+      @media (max-width: 1200px) {
+        footer section div {
+          margin-bottom: 3rem; } }
       footer section div h2 {
         font-size: 2.2rem;
         margin-bottom: 1.8rem; }
