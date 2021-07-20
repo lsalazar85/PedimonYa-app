@@ -1,2 +1,2 @@
 # PedimonYa-app
-PedimonYa website for Nucba stuydents
+PedimonYa website for Nucba students
