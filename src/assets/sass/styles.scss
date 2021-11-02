@@ -353,6 +353,14 @@ header {
     padding: 8rem 0;
     text-align: center;
     background: $main-gray;
+    position: relative;
+
+    #totalItems {
+        position: absolute;
+        top: 0;
+        background: $main-error-color;
+        color: $main-white;
+    }
 
     .principalWrapper {
         @include orderFlex(column, center, center);
@@ -411,6 +419,7 @@ header {
             color: $main-blue;
 
             span {
+                text-transform: capitalize;
                 font-size: 1.6rem;
                 font-weight: 500;
                 margin-left: 1rem;
@@ -450,6 +459,36 @@ header {
         }
 
     }
+}
+
+.total-items {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.6rem;
+    border-top: 1px solid $main-blue;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    @include orderFlex(row, flex-end, flex-end);
+}
+
+button {
+    background: $main-yellow;
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    margin-top: 2.5rem;
+
+    @media (max-width: 1200px){
+        font-size: 5vw;
+    }
+}
+
+.emptyProductsMessage {
+    font-weight: 700;
+    font-size: 1.6rem;
 }
 
 footer {
