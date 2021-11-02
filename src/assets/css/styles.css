@@ -321,7 +321,13 @@ header {
   align-items: center;
   padding: 8rem 0;
   text-align: center;
-  background: #f3f3f3; }
+  background: #f3f3f3;
+  position: relative; }
+  .cartList #totalItems {
+    position: absolute;
+    top: 0;
+    background: #f01919;
+    color: #ffffff; }
   .cartList .principalWrapper {
     display: flex;
     flex-direction: column;
@@ -366,6 +372,7 @@ header {
       align-items: center;
       color: #0c4ea2; }
       .cartList .cart-wrapper .cart-item-content span {
+        text-transform: capitalize;
         font-size: 1.6rem;
         font-weight: 500;
         margin-left: 1rem; }
@@ -395,6 +402,35 @@ header {
       @media (max-width: 1200px) {
         .cartList .cart-wrapper button {
           font-size: 5vw; } }
+
+.total-items {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.6rem;
+  border-top: 1px solid #0c4ea2;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end; }
+
+button {
+  background: #f7de82;
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  margin-top: 2.5rem; }
+  @media (max-width: 1200px) {
+    button {
+      font-size: 5vw; } }
+
+.emptyProductsMessage {
+  font-weight: 700;
+  font-size: 1.6rem; }
 
 footer {
   display: flex;

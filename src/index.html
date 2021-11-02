@@ -45,8 +45,9 @@
                         <li><a href="#listProducts">products</a></li>
                         <li>
                             <a href="#cartList">
-                                <div>
+                                <div id="cart">
                                     <img src="./assets/img/cart.svg" alt="Cart">
+                                    <span id="totalItems"></span>
                                 </div>
                             </a>
                         </li>
@@ -119,57 +120,31 @@
         <section class="listProducts" id="listProducts">
             <div class="principalWrapper">
                 <h2>Acá va la lista de los Pédis</h2>
-                <ul>
+                <ul id="list-products">
                     <li>
                         <div>
                             <img src="./assets/img/balbasaur.png" alt="Balbasaur">
                         </div>
-                        <span>La tortuga <br> franlkin</span>
+                        <span>Balbasaur</span>
                         <span>125$</span>
-                        <button>Comprar</button>
+                        <button onclick={addProduct('balbasaur',125,1)}>Comprar</button>
                     </li>
                     <li>
                         <div>
                             <img src="./assets/img/squirtle.png" alt="Squirtle">
                         </div>
-                        <span>el coso de vamo a calmarno</span>
+                        <span>Squirtle</span>
                         <span>758$</span>
-                        <button>Comprar</button>
+                        <button onclick={addProduct("squirtle",758,1)}>Comprar</button>
                     </li>
                     <li>
                         <div>
-                            <img src="./assets/img/pinguino.png" alt="Pinguino">
+                            <img src="./assets/img/caniggia.png" alt="Pinguino">
                         </div>
-                        <span>el pajaro caniggia</span>
+                        <span>caniggia</span>
                         <span>912$</span>
-                        <button class="disabled">Comprar</button>
-                        <div class="outStock"><strong>sin stock. voló</strong></div>
-                    </li>
-                    <li>
-                        <div>
-                            <img src="./assets/img/balbasaur.png" alt="Balbasaur">
-                        </div>
-                        <span>La tortuga <br> franlkin</span>
-                        <span>125$</span>
-                        <button>Comprar</button>
-                    </li>
-                    <li>
-                        <div>
-                            <img src="./assets/img/squirtle.png" alt="Squirtle">
-                        </div>
-                        <span>el coso de vamo a calmarno</span>
-                        <span>758$</span>
-                        <button>Comprar</button>
-                    </li>
-                    <li>
-                        <div>
-                            <img src="./assets/img/pinguino.png" alt="Pinguino">
-                        </div>
-                        <span>el pajaro caniggia</span>
-                        <span>912$</span>
-                        <button class="disabled">Comprar</button>
-                        <div class="outStock"><strong>sin stock. voló</strong></div>
-                    </li>
+                        <button onclick={addProduct("caniggia",912,1)}>Comprar</button>
+                    </li>               
                 </ul>
             </div>
         </section>
@@ -180,41 +155,18 @@
                     Estaría piola en el navbar, tipo sidebar se abra... <br>
                     Pero como dicen las malas lenguas: "Mientras funcione"
                 </p>
-                <div class="cart-wrapper">
-                    <div class="cart-item">
-                        <div class="cart-item-content">
-                            <div class="item-img">
-                                <img src="./assets/img/squirtle.png" alt="Squirtle">
-                            </div>
-                            <span>- Coso de vamo a calmarno</span>
-                        </div>
-                        <span>$758</span>
+                <div class="cart-wrapper" id="cartWrapper">
+                    <div class="emptyProductsMessage">
+                        No tienes productos seleccionados
                     </div>
-                    <div class="cart-item">
-                        <div class="cart-item-content">
-                            <div class="item-img">
-                                <img src="./assets/img/squirtle.png" alt="Squirtle">
-                            </div>
-                            <span>- Coso de vamo a calmarno</span>
-                        </div>
-                        <span>$758</span>
-                    </div>
-                    <div class="cart-item">
-                        <div class="cart-item-content">
-                            <div class="item-img">
-                                <img src="./assets/img/balbasaur.png" alt="Balbasaur">
-                            </div>
-                            <span>- La Tortuga Franklin</span>
-                        </div>
-                        <span>$125</span>
-                    </div>
-                    <div class="total-items">
-                        <span>
-                            <strong>Total:</strong> $NaN
-                        </span>
-                    </div>
-                    <button>finalizar compra</button>
                 </div>
+                <div class="total-items">
+                        <span>
+                            <strong>Total:</strong>
+                            <span id="totalProducts"></span>$
+                        </span>
+                </div>
+                <button>finalizar compra</button>
             </div>
         </section>
         <footer>
@@ -247,5 +199,6 @@
         </a>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
